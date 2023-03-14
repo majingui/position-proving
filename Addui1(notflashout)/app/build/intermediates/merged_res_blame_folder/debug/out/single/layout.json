@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "D:\\projects\\android\\AddUI1\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_dashboard.xml",
+        "source": "D:\\projects\\android\\AddUI1\\app\\src\\main\\res\\layout\\fragment_dashboard.xml"
+    },
+    {
+        "merged": "D:\\projects\\android\\AddUI1\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\bluetooth_device_list_item.xml",
+        "source": "D:\\projects\\android\\AddUI1\\app\\src\\main\\res\\layout\\bluetooth_device_list_item.xml"
+    },
+    {
+        "merged": "D:\\projects\\android\\AddUI1\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_home.xml",
+        "source": "D:\\projects\\android\\AddUI1\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "D:\\projects\\android\\AddUI1\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "D:\\projects\\android\\AddUI1\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\projects\\android\\AddUI1\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_notifications.xml",
+        "source": "D:\\projects\\android\\AddUI1\\app\\src\\main\\res\\layout\\fragment_notifications.xml"
+    }
+]

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/projects/android/ExcepetUI2/app/src/main/res/drawable/brvah_sample_footer_loading_progress.xml" value="0.2734375" />
+        <entry key="..\:/projects/android/ExcepetUI2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2734375" />
+        <entry key="..\:/projects/android/ExcepetUI2/app/src/main/res/layout/activity_ble_client.xml" value="0.17074275362318841" />
+        <entry key="..\:/projects/android/ExcepetUI2/app/src/main/res/layout/activity_gps_test.xml" value="0.25729166666666664" />
+        <entry key="..\:/projects/android/ExcepetUI2/app/src/main/res/layout/activity_gpsactivity.xml" value="0.25729166666666664" />
+        <entry key="..\:/projects/android/ExcepetUI2/app/src/main/res/layout/activity_main.xml" value="0.18342391304347827" />
+        <entry key="..\:/projects/android/ExcepetUI2/app/src/main/res/layout/activity_main2.xml" value="0.25226449275362317" />
+        <entry key="..\:/projects/android/ExcepetUI2/app/src/main/res/layout/activity_map.xml" value="0.25729166666666664" />
+        <entry key="..\:/projects/android/ExcepetUI2/app/src/main/res/layout/brvah_quick_view_load_more.xml" value="0.17074275362318841" />
+        <entry key="..\:/projects/android/ExcepetUI2/app/src/main/res/layout/recy_ble_item_layout.xml" value="0.17074275362318841" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

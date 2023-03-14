@@ -1,0 +1,110 @@
+\documentclass{article}
+\usepackage[UTF8]{ctex}
+\usepackage{algorithm} % 排版算法
+\usepackage{algorithmic} % 排版算法
+\usepackage{amsmath}
+
+\title{Algorithm}
+\author{NSJim Green}
+\date{October 2020}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section{零知识证明}
+	
+	\begin{algorithm}
+		\caption{零知识证明生成算法} %算法标题
+		\label{alg1} %标签
+		{\bf Input:} 经纬度海拔之差$\alpha$$_{\mbox{\scriptsize 1}}$, $\alpha$$_{\mbox{\scriptsize 2}}$, $\alpha$$_{\mbox{\scriptsize 3}}$、与以见证者位置为圆心的半径${R}$%也可以用\textbf{Input:}
+		
+		{\bf Output:} 零知识证明结果${proof}$
+		\begin{algorithmic}[1] %算法开始
+			%\STATE {\bf Input:} 经纬度海拔之差$\alpha$$_{\mbox{\scriptsize 1}}$, $\alpha$$_{\mbox{\scriptsize 2}}$, $\alpha$$_{\mbox{\scriptsize 3}}$、与以见证者位置为圆心的半径${R}$%也可以用\textbf{Input:}
+			%\STATE {\bf Output:} 零知识证明结果${proof}$
+			\STATE ${distance}$ $\gets$ ${getDistance}$($\alpha$$_{\mbox{\scriptsize 1}}$, $\alpha$$_{\mbox{\scriptsize 2}}$, $\alpha$$_{\mbox{\scriptsize 3}}$);
+			%\STATE ${distance}$ $\gets$ ${getDistance}$($\alpha$$_{\mbox{\scriptsize 1}}$, $\alpha$$_{\mbox{\scriptsize 2}}$, $\alpha$$_{\mbox{\scriptsize 3}}$);
+			\IF{${R^{2}}$ $\ge$ ${distance^{2}}$}
+			\STATE 挑选随机大数${a}$,${b}$$_{\mbox{\scriptsize 1}}$,${b}$$_{\mbox{\scriptsize 2}}$,${b}$$_{\mbox{\scriptsize 3}}$,${b}$$_{\mbox{\scriptsize 4}}$,${b}$$_{\mbox{\scriptsize 5}}$,${e}$$_{\mbox{\scriptsize 1}}$,${e}$$_{\mbox{\scriptsize 2}}$,${e}$$_{\mbox{\scriptsize 3}}$,${e}$$_{\mbox{\scriptsize 4}}$,${f}$$_{\mbox{\scriptsize 1}}$,${f}$$_{\mbox{\scriptsize 2}}$,${f}$$_{\mbox{\scriptsize 3}}$,${f}$$_{\mbox{\scriptsize 4}}$,${k}$,${f
+			l}$$_{\mbox{\scriptsize 1}}$,${l}$$_{\mbox{\scriptsize 2}}$,${l}$$_{\mbox{\scriptsize 3}}$,${l}$$_{\mbox{\scriptsize 4}}$,${n}$,${q}$$_{\mbox{\scriptsize 1}}$,${q}$$_{\mbox{\scriptsize 2}}$,${s}$;
+			\STATE 挑选两个大素数，相乘得到N，并舍弃掉两个素数;
+			\STATE $\sum_{4}^{i=1}$${c{_i^2}}$ $\gets$ ${R^{2}}$ - ${distance^{2}}$
+			\STATE ${d}$$_{\mbox{\scriptsize 1}}$ $\gets$ $\sum_{3}^{i=1}$${e{_i^2}}$ + $\sum_{4}^{i=1}$${f{_i^2}}$;
+			\STATE ${d}$$_{\mbox{\scriptsize 2}}$ $\gets$ $\sum_{4}^{i=1}$${c{_i}f{_i}}$ + $\sum_{i=1}^{3}$${e{_i}}$$\alpha$$_{\mbox{\scriptsize i}}$;
+			\STATE ${g}$ $\gets$ $\prod_{i=1}^{4}$${b{_i^{e{_i}}}}$(mod ${N}$);
+			\STATE ${h}$ $\gets$ ${b{_4^k}}$$\prod_{i=1}^{4}$${l{_i^{c{_i}}}}$(mod ${N}$);
+			\STATE ${m}$ $\gets$ ${b{_4^n}}$$\prod_{i=1}^{4}$${l{_i^{f{_i}}}}$(mod ${N}$);
+			\STATE ${p}$ $\gets$ ${b{_4^{-d_1}}}$${b{_5^{-q_1}}}$(mod ${N}$);
+			\STATE ${r}$ $\gets$ ${b{_4^{-2d_2}}}$${b{_5^{-q_2}}}$(mod ${N}$);
+			\STATE ${x_i}$ $\gets$ ${s·\alpha_i}$ + ${e{_i}}$(${i}=1, 2, 3$), ${x_4}$ $\gets$ ${s·a}$ + ${e{_4}}$;
+			\STATE $\beta$$_{\mbox{\scriptsize i}}$ $\gets$ ${sc_i}$ + ${f{_i}}$(${i}=1, 2, 3, 4$);
+			\STATE $\gamma$ $\gets$ ${sk}$ + ${n}$(mod ${N}$), $\lambda$ $\gets$ ${sq_1}$ + ${q_2}$(mod ${N}$);
+			\STATE ${A}$ $\gets$ $\prod_{i=1}^{3}$${b{_i^{\alpha{_i}}}b{_4^a}}$(mod ${N}$);
+			\STATE ${proof}$ $\gets$ $\left\{N, A, s, b_i, x_i, g, R, \beta_i, \lambda, p, r, \gamma, h, l_i, m\right\}$
+			\ELSE
+			\STATE ${proof}$ $\gets$ $\left\{\right\}$;
+			\ENDIF
+		\end{algorithmic}
+	\end{algorithm}
+	
+	
+	\section{零知识证明验证}
+	\begin{algorithm}
+		\caption{零知识证明验证算法} %算法标题
+		\label{alg2} %标签
+		{\bf Input:} 零知识证明${proof}$
+		
+		{\bf Output:} 验证结果${result}$
+		%\label{alg2} %标签
+		\begin{algorithmic}[1]
+		%	\STATE {\bf Input:} 零知识证明${proof}$
+		%	\STATE {\bf Output:} 验证结果${result}$
+			\STATE ${v_1}$ $\gets$ ${A{^-s}}$$\prod_{i=1}^{4}$${b{_i^{x{_i}}}}$(mod ${N}$);
+			\IF{${v_1}$ != ${g}$}
+			\STATE ${result}$ $\gets$ ${false}$;
+			\ENDIF
+			\STATE ${v_2}$ $\gets$ ${s^2R^2}$ - $\sum_{i=3}^{3}$${x{_i^2}}$ - $\sum_{i=1}^{4}$${\beta{_i^2}}$; ${v_3}$ $\gets$ ${b{_4^{v_2}}b{_5^{\lambda}}}$(mod ${N}$);
+			\IF{${v_3}$ != ${pr^s}$(mod ${N}$)}
+			\STATE ${result}$ $\gets$ ${false}$;
+			\ENDIF
+			\STATE ${v_4}$ $\gets$ ${b{_4^\gamma}h{^{-s}}}$$\prod_{i=1}^{4}$${l{_i^{\beta{_i}}}}$(mod ${N}$);
+			\IF{${v_4}$ != ${m}$}
+			\STATE ${result}$ $\gets$ ${false}$;
+			\ENDIF
+			\STATE ${result}$ $\gets$ ${true}$;
+		\end{algorithmic}
+	\end{algorithm}
+	
+%	\section{运算推导}
+%	\begin{equation*}
+%		\begin{aligned}
+%			v_1 &= ${A^{-s}}$$\prod_{i=1}^{4}$${b_i^{x_i}}$(mod ${N}$) \\
+%			&= ($\prod_{i=1}^{3}$${b_i^{\alpha_i}b_4^a}$)^{-s}\prod_{i=1}^{4}${b_i^{x_i}}$(mod ${N}$) \\
+			%&= 2f(n-2) + f(n-3) \\
+%			
+%		\end{aligned}
+%	\end{equation*}
+	$ f(x)=2*x^3-x-2 $ \quad unique zero $ \hat{x} \in [1, 2] $
+	\begin{enumerate}
+		%\item $ x_{n+1} = 2x_n^3-2 $
+		
+		%\begin{displaymath} 
+		%	\begin{aligned}	 
+			%	${v_1}$ & = ${A^{-s}}$$\prod_{i=1}^{4}$${b_i^{x_i}}$(mod ${N}$) \\
+				%& = ($\prod_{i=1}^{3}$${b_i^{\alpha_i}b_4^a}$)^{-s}\prod_{i=1}^{4}${b_i^{x_i}}$(mod ${N}$) \\
+			%	\varepsilon_{n+1} & = 2(x_n^2+x_n\hat{x}+\hat{x}^2)\varepsilon_n
+	%		\end{aligned}
+	%	\end{displaymath}
+		
+		\item $ v_{1} = \frac{2}{2x_n^2-1} $
+		\begin{displaymath} 
+			\begin{aligned}	 
+				${v_1}$ & = ${A^{-s}}$$\prod_{i=1}^{4}$${b_i^{x_i}}$(mod ${N}$) \\
+				& = ($\prod_{i=1}^{3}$${b_i^{\alpha_i}b_4^a}$)^{-s}\prod_{i=1}^{4}${b_i^{x_i}}$(mod ${N}$ \\
+				\varepsilon_{n+1} & = -\frac{4(x_n+\hat{x})}{(2x_n^2-1)(2\hat{x}-1)}\varepsilon_n
+			\end{aligned}
+		\end{displaymath}
+	\end{enumerate}
+	
+\end{document}

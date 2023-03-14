@@ -1,0 +1,32 @@
+com/example/addui1/backend/CheckUtils.java
+ com.example.addui1.backend.CheckUtils
+com/example/addui1/backend/Digest.java
+ com.example.addui1.backend.Digest
+com/example/addui1/backend/Base64.java
+ com.example.addui1.backend.Base64
+com/example/addui1/databinding/FragmentDashboardBinding.java
+ com.example.addui1.databinding.FragmentDashboardBinding
+com/example/addui1/backend/RSA.java
+ com.example.addui1.backend.RSA
+com/example/addui1/backend/ConfigureEncryptAndDecrypt.java
+ com.example.addui1.backend.ConfigureEncryptAndDecrypt
+com/example/addui1/backend/AES.java
+ com.example.addui1.backend.AES
+com/example/addui1/ui/uifuns/QRcore.java
+ com.example.addui1.ui.uifuns.QRcore
+com/example/addui1/databinding/ActivityMainBinding.java
+ com.example.addui1.databinding.ActivityMainBinding
+com/example/addui1/apis/geohash.java
+ com.example.addui1.apis.geohash
+com/example/addui1/backend/ConvertUtils.java
+ com.example.addui1.backend.ConvertUtils
+com/example/addui1/databinding/FragmentNotificationsBinding.java
+ com.example.addui1.databinding.FragmentNotificationsBinding
+com/example/addui1/BuildConfig.java
+ com.example.addui1.BuildConfig
+com/example/addui1/databinding/FragmentHomeBinding.java
+ com.example.addui1.databinding.FragmentHomeBinding
+com/example/addui1/databinding/BluetoothDeviceListItemBinding.java
+ com.example.addui1.databinding.BluetoothDeviceListItemBinding
+com/example/addui1/bluetooth/BlueToothDeviceAdapter.java
+ com.example.addui1.bluetooth.BlueToothDeviceAdapter
